@@ -5,7 +5,7 @@ pipeline{
         timestamps()
     }
     environment {
-        MYSQL_USER = your_wordpress_database_user
+        MYSQL_USER = "your_wordpress_database_user"
         MYSQL = credentials('MYSQL')
     }
     stages{
