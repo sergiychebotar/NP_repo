@@ -6,6 +6,7 @@ pipeline{
     }
     environment {
         MYSQL_USER = "your_wordpress_database_user"
+        MYSQL_PASSWORD = ${MYSQL_PSW}
         MYSQL = credentials('MYSQL')
     }
     parameters {
