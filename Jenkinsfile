@@ -16,8 +16,11 @@ pipeline{
        stage('Deploy Image') {
       steps{
          script {
-            docker.withRegistry( '', 'dockerhub' ) {
-            dockerImage.push()
+            docker.withRegistry( 'https://registry-1.docker.io/v2/', 'dockerhub' ) {
+            def customImage = docker.build("chebik/np-repo:${env.BUILD_ID}")
+            /* Push the container to the custom Registry */
+            customImage.push()
+            //dockerImage.push()
           }
         }
       }
