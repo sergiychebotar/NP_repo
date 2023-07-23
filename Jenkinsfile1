@@ -8,6 +8,7 @@ pipeline{
         MYSQL_USER = "your_wordpress_database_user"
         MYSQL_PASSWORD = "${MYSQL_PSW}"
         MYSQL = credentials('MYSQL')
+        MYSQL_ROOT_PASSWORD = credentials('MYSQL_ROOT_PASSWORD')
     }
     stages{
        stage('Deploying image') {
