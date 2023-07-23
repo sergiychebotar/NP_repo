@@ -13,18 +13,5 @@ pipeline{
         }
       }
     }
-       stage('Deploy Image') {
-      steps{
-         script {
-            withCredentials([usernamePassword(credentialsId: 'DOCKERHUB', passwordVariable: 'DOCKERHUB_PASSWORD', usernameVariable: 'DOCKERHUB_USERNAME')]) {
-            //docker.withRegistry( '', 'dockerhub' ) {
-            def customImage = docker.build("chebik/np-repo:${env.BUILD_ID}")
-            /* Push the container to the custom Registry */
-            customImage.push()
-            //dockerImage.push()
-          }
-        }
-      }
-    }
-}
+  }
 }
