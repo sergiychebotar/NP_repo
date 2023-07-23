@@ -4,7 +4,10 @@ pipeline{
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
         timestamps()
     }
-    
+    environment {
+        MYSQL_USER = your_wordpress_database_user
+        MYSQL = credentials('MYSQL')
+    }
     stages{
        stage('Deploying image') {
       steps{
