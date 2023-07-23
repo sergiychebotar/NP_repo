@@ -4,12 +4,6 @@ pipeline{
         buildDiscarder(logRotator(numToKeepStr: '5', daysToKeepStr: '5'))
         timestamps()
     }
-    environment {
-        MYSQL_USER = "your_wordpress_database_user"
-        MYSQL_PASSWORD = "${MYSQL_PSW}"
-        MYSQL = credentials('MYSQL')
-        MYSQL_ROOT_PASSWORD = credentials('MYSQL_ROOT_PASSWORD')
-    }
     stages{
        stage('Deploying image') {
       steps{
