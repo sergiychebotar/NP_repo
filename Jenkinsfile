@@ -25,7 +25,7 @@ pipeline{
         //    dockerImage.push()
         //  }
           withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhub_psw', usernameVariable: 'dockerhub_usr')]) {
-              dockerImage.push
+             dockerImage.push()
           }
         }
       }
