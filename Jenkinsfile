@@ -6,8 +6,8 @@ pipeline{
     }
     environment{
         
-        registry = "<dockerhub-username>/<repo-name>"
-        registryCredential = '<dockerhub-credential-name>'        
+        registry = "chebik/np-repo"
+        registryCredential = 'dockerhub'        
     }
     
     stages{
