@@ -13,7 +13,8 @@ pipeline{
        stage('Deploying image') {
       steps{
         script {
-          sh "docker-compose up -d --force-recreate --no-deps wordpress"
+          sh "docker-compose down"
+          sh "docker-compose up -d --force-recreate"
         }
       }
     }

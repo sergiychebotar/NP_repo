@@ -5,7 +5,7 @@ services:
     image: mysql:8.0.33
     container_name: db
     restart: unless-stopped
-    env_file: .env
+    #env_file: .env
     environment:
       - MYSQL_DATABASE=wordpress
     volumes: 
@@ -20,7 +20,7 @@ services:
     image: chebik/np-repo:wodpress
     container_name: wordpress
     restart: unless-stopped
-    env_file: .env
+    #env_file: .env
     environment:
       - WORDPRESS_DB_HOST=db:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
