@@ -6,10 +6,10 @@ pipeline{
     }
     
     stages{
-       stage('Building image') {
+       stage('Deploying image') {
       steps{
         script {
-          dockerImage = docker.build "chebik/np-repo:wodpress"
+          sh "docker-compose up -d --force-recreate --no-deps webserver"
         }
       }
     }
