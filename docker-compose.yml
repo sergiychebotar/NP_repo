@@ -17,7 +17,7 @@ services:
   wordpress:
     depends_on: 
       - db
-    image: wordpress:6.2.2-fpm-alpine
+    image: chebik/np-repo:wodpress
     container_name: wordpress
     restart: unless-stopped
     env_file: .env
