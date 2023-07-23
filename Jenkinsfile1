@@ -9,9 +9,6 @@ pipeline{
         MYSQL_PASSWORD = ${MYSQL_PSW}
         MYSQL = credentials('MYSQL')
     }
-    parameters {
-      credentials credentialType: 'com.cloudbees.plugins.credentials.impl.UsernamePasswordCredentialsImpl', defaultValue: 'MYSQL', name: 'MYSQL_PASSWORD', required: false
-    }
     stages{
        stage('Deploying image') {
       steps{
